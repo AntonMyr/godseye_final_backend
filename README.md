@@ -26,6 +26,7 @@ Follow this tutorial on how to setup a mysql image on docker https://medium.com/
 
 
 <a name="routes"/>
+
 ## Routes
 ### POST /camera
 Post an object that looks like this
