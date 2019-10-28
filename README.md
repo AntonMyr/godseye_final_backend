@@ -17,11 +17,10 @@
 Follow this tutorial on how to setup a mysql image on docker https://medium.com/@dilsimchandrasena/how-to-deploy-and-use-a-mysql-docker-container-in-ubuntu-4ace7c893982.
 
 #### Setup the backend project
+1. Clone the project from Github.
 1. To setup the backend server simply `cd ./backend && npm install`
 2. Setup the right variables in [config.json](./config/warehouse_db.json) (They might already be right)
 3. To connect the mysql to the project, enter the sql folder `cd ./sql` and run `bash setup.sql`'
 4. Now that your mysql database is setup go to /backend again and run `npm start`
 
-### Setup the frontend project
-1. `cd /frontend && npm install && npm start`
-Your project should start a new chrome window.
+
