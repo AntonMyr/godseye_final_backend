@@ -24,3 +24,49 @@ Follow this tutorial on how to setup a mysql image on docker https://medium.com/
 4. Now that your mysql database is setup go to /backend again and run `npm start`
 
 
+## Routes
+### POST /camera
+Post an object that looks like this
+```json
+{
+  "name": "Example name",
+  "camera_url": "http://youtube.com",
+  "description": "Example description"
+}
+```
+This will create a new camera with those attributes.
+
+### GET /camera
+Just send a GET method to `/camera`. This will return an array with all the camera objects that have this format:
+```json
+{
+  camera_id,
+  name,
+  camera_url,
+  description
+}
+```
+
+### POST /camera/remove
+Send an object with this format:
+```json
+[
+ {
+  "camera_id": 1
+ },
+ ...
+]
+```
+
+### GET /vehicles
+Send a GET request and it will return an array with vehicle objects like this:
+```json
+[
+  {
+    vehicle_id,
+    name,
+    description
+  },
+  ...
+]
+```
