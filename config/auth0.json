@@ -1,0 +1,4 @@
+{
+    "domain": "godseye.eu.auth0.com",
+    "audience": "http://localhost:5000"
+}
