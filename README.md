@@ -2,7 +2,8 @@
 
 ## Table of contents
 1. [How to install](#install)
-1. [Routes](#routes)
+2. [Routes](#routes)
+3. [About](#about)
 
 <a name="install"/>
 
@@ -105,3 +106,11 @@ Remove list of numbers. Send and object with this format:
 ### POST /notifications/event
 Send an event notification.
 Just send a http request with post method to this route and it will send a notification to the current numbers.
+
+<a name="about"/>
+
+## About
+
+The Autonomous warehouse system will be a way for the customer (Waleed Abdeen) to monitor its autonomous vehicles. The vehicles are fully autonomous and will be observed with a camera feed. This camera feed will be accessible from the front office application, from where the customer can observe and interfere with the vehicles in case of important events such as a collision.
+
+This Github repository is the backend part of the frontoffice application.
