@@ -2,6 +2,7 @@
 
 ## Table of contents
 1. [How to install](#install)
+1. [Routes](#routes)
 
 <a name="install"/>
 
@@ -18,12 +19,13 @@ Follow this tutorial on how to setup a mysql image on docker https://medium.com/
 
 #### Setup the backend project
 1. Clone the project from Github.
-1. To setup the backend server simply `cd ./backend && npm install`
-2. Setup the right variables in [config.json](./config/warehouse_db.json) (They might already be right)
-3. To connect the mysql to the project, enter the sql folder `cd ./sql` and run `bash setup.sql`'
-4. Now that your mysql database is setup go to /backend again and run `npm start`
+2. To setup the backend server simply `cd ./backend && npm install`
+3. Setup the right variables in [config.json](./config/warehouse_db.json) (They might already be right)
+4. To connect the mysql to the project, enter the sql folder `cd ./sql` and run `bash setup.sql`'
+5. Now that your mysql database is setup go to /backend again and run `npm start`
 
 
+<a name="routes"/>
 ## Routes
 ### POST /camera
 Post an object that looks like this
@@ -38,7 +40,7 @@ This will create a new camera with those attributes.
 
 ### GET /camera
 Just send a GET method to `/camera`. This will return an array with all the camera objects that have this format:
-```json
+```
 {
   camera_id,
   name,
@@ -49,7 +51,7 @@ Just send a GET method to `/camera`. This will return an array with all the came
 
 ### POST /camera/remove
 Send an object with this format:
-```json
+```
 [
  {
   "camera_id": 1
@@ -60,7 +62,7 @@ Send an object with this format:
 
 ### GET /vehicles
 Send a GET request and it will return an array with vehicle objects like this:
-```json
+```
 [
   {
     vehicle_id,
@@ -68,5 +70,33 @@ Send a GET request and it will return an array with vehicle objects like this:
     description
   },
   ...
+]
+```
+
+### GET /notifications
+Returns a list with phone numbers.
+
+```
+[
+  {phone_number: <phone_number>, receiptant_id: <random_id>}
+]
+```
+
+### POST /notifications
+Allows you to add phone numbers. Example body that could be posted:
+```json
+{
+  "phone_number": "123456789"
+}
+```
+
+### POST /notifications/remove
+Remove list of numbers. Send and object with this format:
+```
+[
+ {
+  "receiptant_id": 1
+ },
+ ...
 ]
 ```
