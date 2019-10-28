@@ -100,3 +100,7 @@ Remove list of numbers. Send and object with this format:
  ...
 ]
 ```
+
+### POST /notifications/event
+Send an event notification.
+Just send a http request with post method to this route and it will send a notification to the current numbers.
