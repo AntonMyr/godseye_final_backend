@@ -29,6 +29,7 @@ Follow this tutorial on how to setup a mysql image on docker https://medium.com/
 <a name="routes"/>
 
 ## Routes
+NOTE: All the routes are protected by Auth0. So in order to access these routes you need to send an jwt token that you get from calling their api.
 ### POST /camera
 Post an object that looks like this
 ```json
