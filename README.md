@@ -76,6 +76,27 @@ Send a GET request and it will return an array with vehicle objects like this:
 ]
 ```
 
+### POST /vehicles/remove
+Send an object with this format:
+```
+[
+ {
+  "camera_id": 1
+ },
+ ...
+]
+```
+
+### POST /vehicles
+Post an object that looks like this
+```json
+{
+  "name": "Example name",
+  "description": "Example description"
+}
+```
+This will create a new vehicle with those attributes.
+
 ### GET /notifications
 Returns a list with phone numbers.
 
