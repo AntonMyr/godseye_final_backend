@@ -54,6 +54,59 @@ router.get("/vehicles", async (req, res) => {
     }
 });
 
+router.post("/vehicles", urlencodedParser, async (req, res) => {
+    let {
+        name,
+        description
+    } = req.body;
+
+    console.log(req);
+
+    let sql = `
+    INSERT INTO Vehicles
+        (name, description)
+    VALUES
+        (${mysql.escape(name)}, 
+        ${mysql.escape(description)})
+    `;
+
+    let sqlResult;
+
+    try {
+        sqlResult = await db.query(sql);
+
+        res.send("Created");
+    } catch(error) {
+        console.log("Error in POST /vehicle", error);
+    }
+});
+
+router.post("/vehicles/remove", urlencodedParser, async (req, res) => {
+    let {
+        deleteList
+    } = req.body;
+
+    console.log("DeleteList: ", deleteList);
+
+    for(let i = 0; i < deleteList.length; i++) {
+
+    let sql = `
+    DELETE 
+        FROM Vehicles
+        WHERE vehicle_id = ${mysql.escape(deleteList[i].vehicle_id)};
+    `;
+    let sqlResult;
+
+    try {
+        sqlResult = await db.query(sql);
+
+        res.send("Deleted");
+    } catch(error) {
+        console.log("Error in POST /vehicles/remove", error);
+    }
+    }
+});
+
 router.post("/camera", urlencodedParser, async (req, res) => {
     let {
         name,
